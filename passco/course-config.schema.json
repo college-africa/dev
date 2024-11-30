@@ -2,13 +2,17 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "Specifies the meta-schema URL (e.g., http://json-schema.org/draft-07/schema#)."
+        },
         "lmsId": {
             "type": "number",
             "description": "The id of the course in the lms"
         },
         "createCourse": {
             "type": "boolean",
-            "description": "Should this course be created"
+            "description": "Should this course be created?"
         },
         "code": {
             "type": "string",
