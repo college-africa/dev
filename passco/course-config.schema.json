@@ -1,0 +1,94 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "lmsId": {
+            "type": "number",
+            "description": "The id of the course in the lms"
+        },
+        "createCourse": {
+            "type": "boolean",
+            "description": "Should this course be created"
+        },
+        "code": {
+            "type": "string",
+            "description": "Course Code"
+        },
+        "imageUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Url of image to use for course"
+        },
+        "name": {
+            "type": "string",
+            "description": "Course name"
+        },
+        "summary": {
+            "type": "string",
+            "description": "Course summary"
+        },
+        "details": {
+            "type": "string",
+            "description": "Course details"
+        },
+        "extraInstructions": {
+            "type": "object",
+            "properties": {
+                "mcq": {
+                    "type": "object",
+                    "properties": {
+                        "explanation": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Instructions to be used for generating explanations"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "written": {
+                    "type": "object",
+                    "properties": {
+                        "answer": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Instructions to be used for generating answers"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "code",
+        "imageUrl"
+    ],
+    "additionalProperties": false,
+    "oneOf": [
+        {
+            "required": [
+                "lmsId"
+            ],
+            "not": {
+                "required": [
+                    "createCourse"
+                ]
+            }
+        },
+        {
+            "required": [
+                "createCourse"
+            ],
+            "not": {
+                "required": [
+                    "lmsId"
+                ]
+            }
+        }
+    ]
+}
