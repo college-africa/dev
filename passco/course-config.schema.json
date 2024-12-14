@@ -72,6 +72,20 @@
                                 "type": "string"
                             },
                             "description": "Instructions to be used for generating explanations"
+                        },
+                        "user": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Extra AI user prompt for mcq tests"
+                        },
+                        "system": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Extra AI system prompt for mcq tests"
                         }
                     },
                     "additionalProperties": false
@@ -85,6 +99,20 @@
                                 "type": "string"
                             },
                             "description": "Instructions to be used for generating answers"
+                        },
+                        "user": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Extra AI user prompt for written tests"
+                        },
+                        "system": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Extra AI system prompt for written tests"
                         }
                     },
                     "additionalProperties": false
