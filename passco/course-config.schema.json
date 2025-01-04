@@ -74,6 +74,13 @@
             },
             "additionalProperties": false
         },
+        "aiAgent": {
+            "type": "string",
+            "enum": [
+                "claude",
+                "openai"
+            ]
+        },
         "aiAgents": {
             "type": "object",
             "description": "Agent to use for processing questions",
