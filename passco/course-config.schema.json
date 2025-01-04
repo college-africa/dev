@@ -35,9 +35,44 @@
             "type": "string",
             "description": "Course details"
         },
-        "requireVerification": {
-            "type": "boolean",
-            "description": "Require verification of OCR content before upload"
+        "pipelines": {
+            "type": "object",
+            "description": "Agent to use for processing questions",
+            "properties": {
+                "mcq": {
+                    "type": "object",
+                    "properties": {
+                        "verify": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "checkAnswers": {
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "upload": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "written": {
+                    "type": "object",
+                    "properties": {
+                        "verify": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "upload": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
         },
         "aiAgents": {
             "type": "object",
