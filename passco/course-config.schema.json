@@ -37,7 +37,7 @@
         },
         "pipelines": {
             "type": "object",
-            "description": "Agent to use for processing questions",
+            "description": "Pipeline configurations",
             "properties": {
                 "mcq": {
                     "type": "object",
@@ -104,6 +104,7 @@
         },
         "extraInstructions": {
             "type": "object",
+            "description": "Extra OCR instructions",
             "properties": {
                 "mcq": {
                     "type": "object",
@@ -155,6 +156,67 @@
                                 "type": "string"
                             },
                             "description": "Extra AI system prompt for written tests"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "extraVerInstructions": {
+            "type": "object",
+            "description": "Extra Verification instructions",
+            "properties": {
+                "mcq": {
+                    "type": "object",
+                    "properties": {
+                        "explanation": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Instructions to be used for verifying explanations"
+                        },
+                        "user": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Extra AI user prompt for mcq verification"
+                        },
+                        "system": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Extra AI system prompt for mcq verification"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "written": {
+                    "type": "object",
+                    "properties": {
+                        "answer": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Instructions to be used for verifying answers"
+                        },
+                        "user": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Extra AI user prompt for verifying written tests"
+                        },
+                        "system": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Extra AI system prompt for verifying written tests"
                         }
                     },
                     "additionalProperties": false
