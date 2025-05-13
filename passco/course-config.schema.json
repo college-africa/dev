@@ -102,7 +102,7 @@
             },
             "additionalProperties": false
         },
-        "extraInstructions": {
+        "ocrInstructions": {
             "type": "object",
             "description": "Extra OCR instructions",
             "properties": {
@@ -163,7 +163,7 @@
             },
             "additionalProperties": false
         },
-        "extraVerInstructions": {
+        "verInstructions": {
             "type": "object",
             "description": "Extra Verification instructions",
             "properties": {
